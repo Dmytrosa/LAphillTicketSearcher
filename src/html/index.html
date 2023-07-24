@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body style="display:flex; align-items: center; justify-content: center; ">
+  <input type="text" id="inputForEventId" placeholder="type event id here:">
+    <button id="sendEventId" onclick="submitHandler()">Submit</button>
+</body>
+<script>
+    const submit = (id) => {
+         window.location.href = `http://localhost:3000/?id=${id}`;
+         const submitButton = document.getElementById('sendEventId');
+         submitButton.disabled = true;
+         submitButton.style.backgroundColor = "gray";
+         submitButton.style.cursor = "not-allowed";
+    };
+
+    const submitHandler = () => {
+        const val = document.getElementById('inputForEventId').value;
+        submit(val);
+    };
+</script>
+</html>
